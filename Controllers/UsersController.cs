@@ -39,7 +39,26 @@ public class UsersController : ControllerBase
 return Ok(users);
     }
 
+// PUT: api/users/1
+[HttpPut("{id}")]
+public async Task<IActionResult> UpdateUser(int id, User user)
+{
+    if (id != user.Id)
+        return BadRequest();
 
+    var existingUser = await _context.Users.FindAsync(id);
+
+    if (existingUser == null)
+        return NotFound();
+
+    existingUser.Username = user.Username;
+    existingUser.Email = user.Email;
+    existingUser.Role = user.Role;
+
+    await _context.SaveChangesAsync();
+
+    return NoContent();
+}
 
     // GET: api/users/1
     [HttpGet("{id}")]

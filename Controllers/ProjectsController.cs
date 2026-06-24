@@ -39,7 +39,23 @@ public class ProjectsController : ControllerBase
         return Ok(projects);
     }
 
+// PUT: api/projects/1
+[HttpPut("{id}")]
+public async Task<IActionResult> UpdateProject(int id, CreateProjectDto dto)
+{
+    var project = await _context.Projects.FindAsync(id);
 
+    if (project == null)
+        return NotFound();
+
+    project.Name = dto.Name;
+    project.Description = dto.Description;
+    project.CreatedById = dto.CreatedById;
+
+    await _context.SaveChangesAsync();
+
+    return NoContent();
+}
 
     // GET api/projects/1
 
