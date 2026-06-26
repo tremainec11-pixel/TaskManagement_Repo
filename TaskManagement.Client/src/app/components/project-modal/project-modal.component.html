@@ -1,0 +1,60 @@
+<p>project-modal works!</p>
+<div class="modal-bg">
+
+
+<div class="modal">
+
+
+<h2>
+Create New Project
+</h2>
+
+
+<input
+placeholder="Project name"
+[(ngModel)]="project.name">
+
+
+<textarea
+placeholder="Description"
+[(ngModel)]="project.description">
+</textarea>
+
+
+
+<select
+[(ngModel)]="project.status">
+
+<option>
+Active
+</option>
+
+<option>
+Completed
+</option>
+
+</select>
+
+
+
+<div class="actions">
+
+<button
+(click)="close.emit()">
+Cancel
+</button>
+
+
+<button
+(click)="save()">
+Create
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>

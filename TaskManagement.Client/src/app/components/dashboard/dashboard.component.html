@@ -1,0 +1,351 @@
+<div class="dashboard">
+
+  <aside class="sidebar">
+
+    <div class="logo">
+      Task<span>Flow</span>
+    </div>
+
+    <div class="menu">
+      <a>🏠 Dashboard</a>
+      <a>📁 Projects</a>
+      <a>✅ Tasks</a>
+      <a>👥 Team</a>
+      <a>⚙️ Settings</a>
+    </div>
+
+  </aside>
+
+
+  <main class="content">
+
+
+    <header class="header">
+
+      <div>
+        <h1>Welcome Back 👋</h1>
+        <p>Manage your projects efficiently</p>
+      </div>
+
+      <div class="user">
+        NT
+      </div>
+
+    </header>
+
+
+
+    <section class="stats">
+
+
+      <div class="card">
+        <h3>Total Projects</h3>
+        <h2>12</h2>
+      </div>
+
+
+      <div class="card">
+        <h3>Active Tasks</h3>
+        <h2>48</h2>
+      </div>
+
+
+      <div class="card">
+        <h3>Completed</h3>
+        <h2>32</h2>
+      </div>
+
+
+      <div class="card">
+        <h3>Team Members</h3>
+        <h2>8</h2>
+      </div>
+
+
+    </section>
+
+
+
+
+
+    <section class="dashboard-grid">
+
+
+
+      <!-- PROJECTS -->
+
+      <div class="panel">
+
+
+        <div class="panel-header">
+
+          <h2>Recent Projects</h2>
+
+
+          <button 
+class="action-btn"
+(click)="openProjectModal()">
+
++ New Project
+
+</button>
+
+          <div class="modal" *ngIf="showProjectModal">
+
+  <div class="modal-box">
+
+    <h2>Create Project</h2>
+
+    <input 
+      placeholder="Project name">
+
+    <textarea
+      placeholder="Description">
+    </textarea>
+
+
+    <button>
+      Save Project
+    </button>
+
+
+    <button 
+      (click)="showProjectModal = false">
+      Cancel
+    </button>
+
+  </div>
+
+</div>
+
+
+        </div>
+
+
+
+        <div class="list-item">
+
+          <span>
+            E-Commerce Platform
+          </span>
+
+          <span class="badge active-status">
+            Active
+          </span>
+
+        </div>
+
+
+
+        <div class="list-item">
+
+          <span>
+            Task Management App
+          </span>
+
+          <span class="badge progress-status">
+            In Progress
+          </span>
+
+        </div>
+
+
+
+
+        <div class="list-item">
+
+          <span>
+            Portfolio Website
+          </span>
+
+          <span class="badge completed-status">
+            Completed
+          </span>
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+
+      <!-- PROGRESS -->
+
+      <div class="panel">
+
+
+        <h2>
+          Project Progress
+        </h2>
+
+
+
+        <div class="progress-item">
+          <span>E-Commerce Platform</span>
+          <span>80%</span>
+        </div>
+
+
+        <div class="progress-bar">
+          <div 
+          class="progress-fill"
+          style="width:80%">
+          </div>
+        </div>
+
+
+
+
+        <div class="progress-item">
+          <span>Task Management App</span>
+          <span>60%</span>
+        </div>
+
+
+        <div class="progress-bar">
+
+          <div 
+          class="progress-fill"
+          style="width:60%">
+          </div>
+
+        </div>
+
+
+
+
+        <div class="progress-item">
+
+          <span>
+            Portfolio Website
+          </span>
+
+          <span>
+            100%
+          </span>
+
+        </div>
+
+
+
+        <div class="progress-bar">
+
+          <div 
+          class="progress-fill"
+          style="width:100%">
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+
+
+      <!-- ACTIVITY -->
+
+      <div class="panel">
+
+
+        <h2>
+          Recent Activity
+        </h2>
+
+
+
+        <div class="activity-item">
+          🟢 New Project Created
+        </div>
+
+
+        <div class="activity-item">
+          🟡 Task Updated
+        </div>
+
+
+        <div class="activity-item">
+          🔵 Team Member Added
+        </div>
+
+
+        <div class="activity-item">
+          🟣 Project Completed
+        </div>
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+      <!-- TASKS -->
+
+
+      <div class="panel">
+
+
+        <div class="panel-header">
+
+          <h2>
+            Recent Tasks
+          </h2>
+
+
+          <button class="action-btn">
+            + New Task
+          </button>
+
+
+        </div>
+
+
+
+
+        <div class="task-item">
+          ✅ Create Dashboard UI
+        </div>
+
+
+        <div class="task-item">
+          🔗 Connect ASP.NET API
+        </div>
+
+
+        <div class="task-item">
+          🔒 Add Authentication
+        </div>
+
+
+        <div class="task-item">
+          🚀 Deploy Application
+        </div>
+
+
+
+      </div>
+
+
+
+
+    </section>
+
+
+
+  </main>
+
+
+</div>
