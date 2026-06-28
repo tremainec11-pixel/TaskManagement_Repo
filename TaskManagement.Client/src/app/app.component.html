@@ -1,5 +1,80 @@
 <div class="dashboard">
 
+  <aside class="sidebar">
+
+  <div class="logo">
+    Task<span>Flow</span>
+  </div>
+
+  <nav class="menu">
+
+    <a class="active">
+      🏠 <span>Dashboard</span>
+    </a>
+
+    <a>
+      📁 <span>Projects</span>
+    </a>
+
+    <a>
+      ✅ <span>Tasks</span>
+    </a>
+
+    <a>
+      👥 <span>Team</span>
+    </a>
+
+    <a>
+      📅 <span>Calendar</span>
+    </a>
+
+    <a>
+      📊 <span>Reports</span>
+    </a>
+
+    <a>
+      ⚙️ <span>Settings</span>
+    </a>
+
+  </nav>
+
+  <div class="sidebar-bottom">
+
+    <div class="workspace">
+
+      <h4>Workspace</h4>
+
+      <div class="progress">
+
+        <div class="progress-value"></div>
+
+      </div>
+
+      <small>{{ projects.length }} Projects</small><br>
+      <small>{{ tasks.length }} Tasks</small>
+
+    </div>
+
+    <div class="profile">
+
+      <div class="profile-avatar">
+        NT
+      </div>
+
+      <div>
+
+        <strong>Tremaine</strong><br>
+
+        <small>Administrator</small>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</aside>
+
   <!-- PROJECT MODAL -->
   <div class="modal" *ngIf="showProjectModal">
 
@@ -72,63 +147,155 @@
 
   </div>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <div class="logo">
-      Task<span>Flow</span>
-    </div>
-
-    <div class="menu">
-      <a>🏠 Dashboard</a>
-      <a>📁 Projects</a>
-      <a>✅ Tasks</a>
-      <a>👥 Team</a>
-      <a>⚙️ Settings</a>
-    </div>
-
-  </aside>
-
   <!-- MAIN CONTENT -->
   <main class="content">
 
     <header class="header">
 
-      <div>
-        <h1>Welcome Back 👋</h1>
-        <p>Manage your projects efficiently</p>
-      </div>
+  <div class="header-left">
 
-      <div class="user">
+    <div>
+      <h1>Welcome Back 👋</h1>
+      <p>Manage your projects efficiently</p>
+    </div>
+
+  </div>
+
+
+  <div class="header-center">
+
+    <div class="search-box">
+
+      <span>🔍</span>
+
+      <input
+      type="text"
+      placeholder="Search projects, tasks or members...">
+
+    </div>
+
+  </div>
+
+
+
+  <div class="header-right">
+
+
+    <button class="icon-btn">
+      ➕
+    </button>
+
+
+    <button class="icon-btn notification">
+
+      🔔
+
+      <span class="notification-dot"></span>
+
+    </button>
+
+
+
+    <div class="user-menu">
+
+
+      <div class="avatar">
         NT
       </div>
 
-    </header>
+
+      <div class="user-info">
+
+        <strong>Tremaine</strong>
+
+        <small>
+          Administrator
+        </small>
+
+      </div>
+
+
+      <span>
+        ▼
+      </span>
+
+
+    </div>
+
+
+  </div>
+
+
+</header>
 
     <!-- STATS -->
     <section class="stats">
 
-      <div class="card">
-        <h3>Total Projects</h3>
-        <h2>{{ projects.length }}</h2>
-      </div>
+  <!-- Projects -->
+  <div class="card projects-card">
 
-      <div class="card">
-        <h3>Active Tasks</h3>
-        <h2>{{ tasks.length }}</h2>
-      </div>
+    <div class="card-top">
+      <div class="card-icon">📁</div>
+      <span class="trend positive">+12%</span>
+    </div>
 
-      <div class="card">
-        <h3>Completed</h3>
-        <h2>32</h2>
-      </div>
+    <h3>Total Projects</h3>
 
-      <div class="card">
-        <h3>Team Members</h3>
-        <h2>8</h2>
-      </div>
+    <h2>{{ projects.length }}</h2>
 
-    </section>
+    <p>Active workspaces</p>
+
+  </div>
+
+  <!-- Tasks -->
+  <div class="card tasks-card">
+
+    <div class="card-top">
+      <div class="card-icon">✅</div>
+      <span class="trend positive">+8%</span>
+    </div>
+
+    <h3>Active Tasks</h3>
+
+    <h2>{{ tasks.length }}</h2>
+
+    <p>Tasks in progress</p>
+
+  </div>
+
+  <!-- Completed -->
+  <div class="card completed-card">
+
+    <div class="card-top">
+      <div class="card-icon">🎯</div>
+      <span class="trend positive">+20%</span>
+    </div>
+
+    <h3>Completed</h3>
+
+    <h2>32</h2>
+
+    <p>Finished this month</p>
+
+  </div>
+
+  <!-- Team -->
+  <div class="card team-card">
+
+    <div class="card-top">
+      <div class="card-icon">👥</div>
+      <span class="trend neutral">8</span>
+    </div>
+
+    <h3>Team Members</h3>
+
+    <h2>8</h2>
+
+    <p>Active collaborators</p>
+
+  </div>
+
+</section>
 
     <!-- GRID -->
     <section class="dashboard-grid">

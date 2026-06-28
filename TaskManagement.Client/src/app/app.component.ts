@@ -1,14 +1,18 @@
+import { Sidebar } from './components/sidebar/sidebar';
+import { HeaderComponent } from './components/header/header';
+
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule
+  FormsModule,
+  Sidebar,
+  HeaderComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -16,11 +20,24 @@ import { FormsModule } from '@angular/forms';
 
 
 export class AppComponent {
+  testMethod(project: any) {
+
+  console.log(project);
+
+}
 
 
   showProjectModal = false;
 
   showTaskModal = false;
+
+  showEditProjectModal = false;
+
+  showEditTaskModal = false;
+
+  editingProject: any = null;
+
+  editingTask: any = null;
 
 
   newProjectName = '';
@@ -29,7 +46,7 @@ export class AppComponent {
 
 
   newProjectDescription = '';
-  
+
   newTaskDescription = '';
 
 
@@ -45,7 +62,6 @@ export class AppComponent {
 
 
   if(savedProjects){
-
     this.projects = JSON.parse(savedProjects);
 
   }
@@ -227,6 +243,41 @@ export class AppComponent {
     );
 
   }
+
+}
+
+openEditProjectModal(project: any) {
+
+  this.editingProject = { ...project };
+
+  this.showEditProjectModal = true;
+
+}
+
+closeEditProjectModal() {
+
+  this.showEditProjectModal = false;
+
+}
+
+saveEditedProject() {
+
+  const index = this.projects.findIndex(
+    p => p.id === this.editingProject.id
+  );
+
+  if (index !== -1) {
+
+    this.projects[index] = this.editingProject;
+
+    localStorage.setItem(
+      'projects',
+      JSON.stringify(this.projects)
+    );
+
+  }
+
+  this.closeEditProjectModal();
 
 }
 

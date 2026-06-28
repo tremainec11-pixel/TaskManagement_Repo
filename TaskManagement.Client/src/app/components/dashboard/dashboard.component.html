@@ -37,34 +37,27 @@
 
     <section class="stats">
 
+  <div class="card">
+    <h3>Total Projects</h3>
+    <h2>{{ projects.length }}</h2>
+  </div>
 
-      <div class="card">
-        <h3>Total Projects</h3>
-        <h2>12</h2>
-      </div>
+  <div class="card">
+    <h3>Active Tasks</h3>
+    <h2>{{ tasks.length }}</h2>
+  </div>
 
+  <div class="card">
+    <h3>Completed</h3>
+    <h2>32</h2>
+  </div>
 
-      <div class="card">
-        <h3>Active Tasks</h3>
-        <h2>48</h2>
-      </div>
+  <div class="card">
+    <h3>Team Members</h3>
+    <h2>8</h2>
+  </div>
 
-
-      <div class="card">
-        <h3>Completed</h3>
-        <h2>32</h2>
-      </div>
-
-
-      <div class="card">
-        <h3>Team Members</h3>
-        <h2>8</h2>
-      </div>
-
-
-    </section>
-
-
+</section>
 
 
 
@@ -83,12 +76,12 @@
 
 
           <button 
-class="action-btn"
-(click)="openProjectModal()">
+          class="action-btn"
+          (click)="showProjectModal = true">
 
-+ New Project
+          + New Project
 
-</button>
+          </button>
 
           <div class="modal" *ngIf="showProjectModal">
 
@@ -287,11 +280,6 @@ class="action-btn"
 
 
 
-
-
-
-
-
       <!-- TASKS -->
 
 
@@ -318,6 +306,41 @@ class="action-btn"
         <div class="task-item">
           ✅ Create Dashboard UI
         </div>
+
+        <div
+class="task-item"
+*ngFor="let task of tasks">
+
+
+<span>
+✅ {{task.title}}
+</span>
+
+
+<span class="badge active-status">
+
+{{task.status}}
+
+</span>
+
+
+<button
+(click)="editTask(task)">
+
+✏️
+
+</button>
+
+
+<button
+(click)="deleteTask(task.id)">
+
+🗑️
+
+</button>
+
+
+</div>
 
 
         <div class="task-item">
