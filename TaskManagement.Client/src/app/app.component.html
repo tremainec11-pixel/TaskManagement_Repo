@@ -1,82 +1,85 @@
 <div class="dashboard">
 
+  <!-- ================= SIDEBAR ================= -->
+
   <aside class="sidebar">
 
-  <div class="logo">
-    Task<span>Flow</span>
-  </div>
-
-  <nav class="menu">
-
-    <a class="active">
-      🏠 <span>Dashboard</span>
-    </a>
-
-    <a>
-      📁 <span>Projects</span>
-    </a>
-
-    <a>
-      ✅ <span>Tasks</span>
-    </a>
-
-    <a>
-      👥 <span>Team</span>
-    </a>
-
-    <a>
-      📅 <span>Calendar</span>
-    </a>
-
-    <a>
-      📊 <span>Reports</span>
-    </a>
-
-    <a>
-      ⚙️ <span>Settings</span>
-    </a>
-
-  </nav>
-
-  <div class="sidebar-bottom">
-
-    <div class="workspace">
-
-      <h4>Workspace</h4>
-
-      <div class="progress">
-
-        <div class="progress-value"></div>
-
-      </div>
-
-      <small>{{ projects.length }} Projects</small><br>
-      <small>{{ tasks.length }} Tasks</small>
-
+    <div class="logo">
+      Task<span>Flow</span>
     </div>
 
-    <div class="profile">
+    <nav class="menu">
 
-      <div class="profile-avatar">
-        NT
+      <a class="active">
+        🏠 <span>Dashboard</span>
+      </a>
+
+      <a>
+        📁 <span>Projects</span>
+      </a>
+
+      <a>
+        ✅ <span>Tasks</span>
+      </a>
+
+      <a>
+        👥 <span>Team</span>
+      </a>
+
+      <a>
+        📅 <span>Calendar</span>
+      </a>
+
+      <a>
+        📊 <span>Reports</span>
+      </a>
+
+      <a>
+        ⚙️ <span>Settings</span>
+      </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+
+      <div class="workspace">
+
+        <h4>Workspace</h4>
+
+        <div class="progress">
+          <div class="progress-value"></div>
+        </div>
+
+        <small>{{ projects.length }} Projects</small><br>
+        <small>{{ tasks.length }} Tasks</small>
+
       </div>
 
-      <div>
+      <div class="profile">
 
-        <strong>Tremaine</strong><br>
+      <div class="profile-avatar">
+        TNC
+      </div>
+
+      <div class="profile-info">
+
+        <strong>Tremaine Charles</strong>
 
         <small>Administrator</small>
 
       </div>
 
+     </div>
+
     </div>
 
-  </div>
+  </aside>
 
-</aside>
+  <!-- ================= PROJECT MODAL ================= -->
 
-  <!-- PROJECT MODAL -->
-  <div class="modal" *ngIf="showProjectModal">
+  <div
+    class="modal"
+    *ngIf="showProjectModal">
 
     <div class="modal-box">
 
@@ -87,8 +90,8 @@
         [(ngModel)]="newProjectName">
 
       <textarea
-      placeholder="Description"
-      [(ngModel)]="newProjectDescription">
+        placeholder="Description"
+        [(ngModel)]="newProjectDescription">
       </textarea>
 
       <div class="modal-actions">
@@ -111,8 +114,11 @@
 
   </div>
 
-  <!-- TASK MODAL -->
-  <div class="modal" *ngIf="showTaskModal">
+  <!-- ================= TASK MODAL ================= -->
+
+  <div
+    class="modal"
+    *ngIf="showTaskModal">
 
     <div class="modal-box">
 
@@ -123,8 +129,8 @@
         [(ngModel)]="newTaskName">
 
       <textarea
-      placeholder="Description"
-      [(ngModel)]="newTaskDescription">
+        placeholder="Description"
+        [(ngModel)]="newTaskDescription">
       </textarea>
 
       <div class="modal-actions">
@@ -147,88 +153,76 @@
 
   </div>
 
-  <!-- MAIN CONTENT -->
+  <!-- ================= MAIN CONTENT ================= -->
+
   <main class="content">
 
     <header class="header">
 
-  <div class="header-left">
+      <div class="header-left">
 
-    <div>
-      <h1>Welcome Back 👋</h1>
-      <p>Manage your projects efficiently</p>
-    </div>
+        <div>
 
-  </div>
+          <h1>Welcome Back 👋</h1>
 
+          <p>Manage your projects efficiently</p>
 
-  <div class="header-center">
-
-    <div class="search-box">
-
-      <span>🔍</span>
-
-      <input
-      type="text"
-      placeholder="Search projects, tasks or members...">
-
-    </div>
-
-  </div>
-
-
-
-  <div class="header-right">
-
-
-    <button class="icon-btn">
-      ➕
-    </button>
-
-
-    <button class="icon-btn notification">
-
-      🔔
-
-      <span class="notification-dot"></span>
-
-    </button>
-
-
-
-    <div class="user-menu">
-
-
-      <div class="avatar">
-        NT
-      </div>
-
-
-      <div class="user-info">
-
-        <strong>Tremaine</strong>
-
-        <small>
-          Administrator
-        </small>
+        </div>
 
       </div>
 
+      <div class="header-center">
 
-      <span>
-        ▼
-      </span>
+        <div class="search-box">
 
+          <span>🔍</span>
 
-    </div>
+          <input
+            type="text"
+            placeholder="Search projects, tasks or members...">
 
+        </div>
 
-  </div>
+      </div>
 
+      <div class="header-right">
 
-</header>
+        <button class="icon-btn">
+          ➕
+        </button>
 
-    <!-- STATS -->
+        <button class="icon-btn notification">
+
+          🔔
+
+          <span class="notification-dot"></span>
+
+        </button>
+
+        <div class="user-menu">
+
+          <div class="avatar">
+            NT
+          </div>
+
+          <div class="user-info">
+
+            <strong>Tremaine</strong>
+
+            <small>Administrator</small>
+
+          </div>
+
+          <span>▼</span>
+
+        </div>
+
+      </div>
+
+    </header>
+
+    <!-- ================= STATS ================= -->
+
     <section class="stats">
 
   <!-- Projects -->
@@ -239,11 +233,15 @@
       <span class="trend positive">+12%</span>
     </div>
 
-    <h3>Total Projects</h3>
-
     <h2>{{ projects.length }}</h2>
 
-    <p>Active workspaces</p>
+    <h3>Total Projects</h3>
+
+    <p>Active Workspaces</p>
+
+    <div class="card-wave"></div>
+
+    <canvas class="mini-chart" id="projectsMiniChart"></canvas>
 
   </div>
 
@@ -255,11 +253,15 @@
       <span class="trend positive">+8%</span>
     </div>
 
-    <h3>Active Tasks</h3>
-
     <h2>{{ tasks.length }}</h2>
 
-    <p>Tasks in progress</p>
+    <h3>Active Tasks</h3>
+
+    <p>Tasks in Progress</p>
+
+    <div class="card-wave"></div>
+
+    <canvas class="mini-chart" id="tasksMiniChart"></canvas>
 
   </div>
 
@@ -271,11 +273,15 @@
       <span class="trend positive">+20%</span>
     </div>
 
-    <h3>Completed</h3>
-
     <h2>32</h2>
 
-    <p>Finished this month</p>
+    <h3>Completed</h3>
+
+    <p>Finished this Month</p>
+
+    <div class="card-wave"></div>
+
+    <canvas class="mini-chart" id="completedMiniChart"></canvas>
 
   </div>
 
@@ -287,20 +293,50 @@
       <span class="trend neutral">8</span>
     </div>
 
-    <h3>Team Members</h3>
-
     <h2>8</h2>
 
-    <p>Active collaborators</p>
+    <h3>Team Members</h3>
 
-  </div>
+    <p>Active Collaborators</p>
 
-</section>
+    <div class="card-wave"></div>
 
-    <!-- GRID -->
+    <canvas class="mini-chart" id="teamMiniChart"></canvas>
+
+     </div>
+
+     </section>
+
+    <!-- ================= DASHBOARD GRID ================= -->
+
     <section class="dashboard-grid">
 
-      <!-- PROJECTS -->
+      <!-- PRODUCTIVITY -->
+
+      <section class="chart-section">
+
+        <div class="panel chart-panel">
+
+          <div class="panel-header">
+
+            <div>
+
+              <h2>📊 Productivity Overview</h2>
+
+              <p>Tasks completed during the last 6 months</p>
+
+            </div>
+
+          </div>
+
+          <canvas id="taskChart"></canvas>
+
+        </div>
+
+      </section>
+
+      <!-- RECENT PROJECTS -->
+
       <div class="panel">
 
         <div class="panel-header">
@@ -320,8 +356,11 @@
           *ngFor="let project of projects">
 
           <div>
+
             <strong>{{ project.name }}</strong>
+
             <p>{{ project.description }}</p>
+
           </div>
 
           <span class="badge active-status">
@@ -329,9 +368,9 @@
           </span>
 
           <button
-             class="edit-btn"
-             (click)="editProject(project)">
-             ✏️
+            class="edit-btn"
+            (click)="editProject(project)">
+            ✏️
           </button>
 
           <button
@@ -344,39 +383,40 @@
 
       </div>
 
-      <!-- PROGRESS -->
-      <div class="panel">
 
-        <h2>Project Progress</h2>
+      <!-- PROJECT PROGRESS -->
+<div class="panel">
 
-        <div class="progress-item">
-          <span>E-Commerce Platform</span>
-          <span>80%</span>
-        </div>
+  <h2>Project Progress</h2>
 
-        <div class="progress-bar">
-          <div class="progress-fill" style="width:80%"></div>
-        </div>
+  <div class="progress-item">
+    <span>E-Commerce Platform</span>
+    <span>80%</span>
+  </div>
 
-        <div class="progress-item">
-          <span>Task Management App</span>
-          <span>60%</span>
-        </div>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width:80%"></div>
+  </div>
 
-        <div class="progress-bar">
-          <div class="progress-fill" style="width:60%"></div>
-        </div>
+  <div class="progress-item">
+    <span>Task Management App</span>
+    <span>60%</span>
+  </div>
 
-        <div class="progress-item">
-          <span>Portfolio Website</span>
-          <span>100%</span>
-        </div>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width:60%"></div>
+  </div>
 
-        <div class="progress-bar">
-          <div class="progress-fill" style="width:100%"></div>
-        </div>
+  <div class="progress-item">
+    <span>Portfolio Website</span>
+    <span>100%</span>
+  </div>
 
-      </div>
+  <div class="progress-bar">
+    <div class="progress-fill" style="width:100%"></div>
+  </div>
+
+</div>
 
       <!-- ACTIVITY -->
       <div class="panel">
@@ -401,6 +441,7 @@
 
       </div>
 
+
       <!-- TASKS -->
       <div class="panel">
 
@@ -417,13 +458,13 @@
         </div>
 
         <div
-        class="task-item"
-        *ngFor="let task of tasks">
+          class="task-item"
+          *ngFor="let task of tasks">
 
-        <div>
-        <strong>✅ {{ task.title }}</strong>
-        <p>{{ task.description }}</p>
-        </div>
+          <div>
+            <strong>✅ {{ task.title }}</strong>
+            <p>{{ task.description }}</p>
+          </div>
 
           <span class="badge active-status">
             {{ task.status }}
